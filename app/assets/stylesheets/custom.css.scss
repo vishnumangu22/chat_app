@@ -4,3 +4,13 @@
 .chatbox {
     height: 450px;
 }
+
+.chatbox-messages {
+  height: 400px;        /* fixed height */
+  overflow-y: auto;     /* vertical scroll */
+  overflow-x: hidden;   /* prevent side overflow */
+}
+
+.chatbox-messages .event {
+  word-wrap: break-word;
+}

@@ -1,6 +1,16 @@
 <div class="ui middle aligned center aligned grid" style="height: 100vh;">
   <div class="column" style="max-width: 450px;">
 
+    <!-- Flash Message -->
+    <% if flash[:alert] %>
+      <div class="ui negative message">
+        <div class="header">
+          Login Failed
+        </div>
+        <p><%= flash[:alert] %></p>
+      </div>
+    <% end %>
+
     <h2 class="ui orange icon header">
       <i class="circular coffee icon"></i>
       <div class="content">
