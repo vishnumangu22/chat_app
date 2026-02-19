@@ -1,1 +1,36 @@
-<h1>Login Page</h1>
+<div class="ui middle aligned center aligned grid" style="height: 100vh;">
+  <div class="column" style="max-width: 450px;">
+
+    <h2 class="ui orange icon header">
+      <i class="circular coffee icon"></i>
+      <div class="content">
+        Log-in to MessageMe
+      </div>
+    </h2>
+
+    <%= form_with(url: login_path, class: "ui large form", local: true) do |f| %>
+
+      <div class="ui stacked segment">
+
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <%= f.text_field :username, placeholder: "Username" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <%= f.password_field :password, placeholder: "Password" %>
+          </div>
+        </div>
+
+        <%= f.submit "Login", class: "ui fluid large orange submit button" %>
+
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

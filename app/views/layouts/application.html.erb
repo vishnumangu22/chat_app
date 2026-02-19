@@ -2,22 +2,53 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Chat App" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
+    <!-- Semantic UI CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- jQuery (Required for Semantic UI) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Semantic UI JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui small inverted menu">
+      <div class="ui container">
+
+        <%= render 'layouts/navigation' %>
+      </div>
+    </div>
+
+    <div class="ui container">
+      <%= yield %>
+    </div>
+
+    <!-- Initialize Semantic UI Dropdown (Turbo Compatible) -->
+    <script>
+      document.addEventListener("turbo:load", function() {
+        $('.ui.dropdown').dropdown();
+      });
+    </script>
+
   </body>
 </html>
