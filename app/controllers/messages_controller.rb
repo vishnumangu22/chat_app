@@ -5,9 +5,8 @@ class MessagesController < ApplicationController
     @message = current_user.messages.build(message_params)
 
     if @message.save
-      redirect_to root_path
-    else
-      redirect_to root_path
+      # Do nothing here
+      # Broadcasting happens automatically in Message model
     end
   end
 
