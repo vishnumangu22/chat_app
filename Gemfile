@@ -20,7 +20,7 @@ gem "jbuilder"
 gem "semantic-ui-sass"
 gem "jquery-rails"
 
-gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.22"
 
 
 gem "hirb"
